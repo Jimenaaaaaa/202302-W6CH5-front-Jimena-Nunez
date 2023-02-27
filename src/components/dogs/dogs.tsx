@@ -11,7 +11,7 @@ export function Dogs() {
 
   useEffect(() => {
     loadDogs();
-  }, []);
+  }, [loadDogs]);
 
   return (
     <div className="card-container">

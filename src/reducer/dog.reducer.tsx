@@ -2,10 +2,9 @@ import { createReducer } from "@reduxjs/toolkit";
 import { DogStructure } from "../models/dog.model";
 import {
   addCreator,
-  deleteCreator,
   loadAllCreator,
   loadOneCreator,
-  updateCreator,
+
 } from "./dog.actions.creator";
 
 type State = {

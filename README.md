@@ -31,3 +31,9 @@ AÑADIMOS un front con REDUX testado
 - Editar 'thing'
 
 - Página de detalle
+
+
+## Stoppers
+
+- El router no me reconoce 'Routes' como parte de react router dom.
+- muchos problemas de tipado en el reducer.

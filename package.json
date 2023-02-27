@@ -52,6 +52,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-router-dom": "^5.3.3",
     "husky": "^8.0.0"
   }
 }

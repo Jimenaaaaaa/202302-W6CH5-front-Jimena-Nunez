@@ -3,9 +3,9 @@ import { DogStructure, ProtoDogStructure } from "../models/dog.model";
 export interface DogApiRepoStructure {
   loadAll(): Promise<DogStructure[]>;
   loadOne(): Promise<DogStructure>;
-  add();
-  update();
-  delete();
+  add(): Promise<DogStructure>;
+  update(): Promise<DogStructure>;
+  delete(): Promise<void>;
 }
 
 export class DogApiRepo {
@@ -22,7 +22,7 @@ export class DogApiRepo {
     return data;
   }
 
-  async loadOne(id: string): Promise<DogStructure> {
+  async loadOne(id: number): Promise<DogStructure> {
     const resp = await fetch(this.url + id);
     if (!resp.ok)
       throw new Error("Error Http: " + resp.status + ". " + resp.statusText);

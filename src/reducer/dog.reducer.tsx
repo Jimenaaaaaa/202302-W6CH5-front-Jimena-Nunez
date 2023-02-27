@@ -35,10 +35,6 @@ export const dogsReducer = createReducer(initialState, (builder) => {
     return { ...state, dogs: [...state.dogs, payload] };
   });
 
-  builder.addCase(addCreator, (state, { payload }) => {
-    return { ...state, dogs: [...state.dogs, payload] };
-  });
-
   // builder.addCase(deleteCreator, (state, { payload }) => ({
 
   //   ...state,

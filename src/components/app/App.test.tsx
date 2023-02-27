@@ -4,12 +4,16 @@ import { Provider } from "react-redux";
 import { store } from "../../store/store";
 import App from "./App";
 
-test("renders learn react link", () => {
-  const { getByText } = render(
-    <Provider store={store}>
-      <App />
-    </Provider>
-  );
 
-  expect(getByText(/learn/i)).toBeInTheDocument();
+describe("Given the App component", () => {
+  let home = jest.mock("../home/pages/home");
+  test("renders learn react link", () => {
+    render(
+      <Provider store={store}>
+        <App />
+      </Provider>
+    );
+
+    expect(home).toHaveBeenCalled();
+  });
 });

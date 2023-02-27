@@ -31,21 +31,25 @@ export const dogsReducer = createReducer(initialState, (builder) => {
     };
   });
 
-  builder.addCase(addCreator, (state, { payload }) => ({
-    ...state,
-    dogs: state.dogs.push(payload),
-  }));
+  builder.addCase(addCreator, (state, { payload }) => {
+    return { ...state, dogs: [...state.dogs, payload] };
+  });
 
-  builder.addCase(deleteCreator, (state, { payload }) => ({
-    ...state,
-    dogs: state.dogs.filter((dog) => dog.id !== payload.id),
-  }));
+  builder.addCase(addCreator, (state, { payload }) => {
+    return { ...state, dogs: [...state.dogs, payload] };
+  });
+
+  // builder.addCase(deleteCreator, (state, { payload }) => ({
+
+  //   ...state,
+  //   dogs: state.dogs.filter((dog) => dog.id !== payload.id),
+  // }));
 
   // Tengo que arreglar el update
-  builder.addCase(updateCreator, (state, { payload }) => ({
-    ...state,
-    dogs[state.dogs.findIndex((dog) => dog.id === payload.id)]: payload
-  }));
+  // builder.addCase(updateCreator, (state, { payload }) => ({
+  //   ...state,
+  //   dogs: state.dogs.map((dog)=>(dog.id === payload.id ? payload : state))
+  // }));
 
   builder.addDefaultCase((state) => state);
 });
